@@ -11,7 +11,7 @@ class ExchangeRateServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->loadRoutesFrom(__DIR__ . '/routes/api.php');
+        $this->loadRoutesFrom(__DIR__ . '/../routes/api.php');
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -30,7 +30,7 @@ class ExchangeRateServiceProvider extends ServiceProvider
 
         // Register the main class to use with the facade
         $this->app->singleton('exchange-rate', function () {
-            return new ExchangeRate();
+            return new ExchangeRate(new Parser());
         });
     }
 }
