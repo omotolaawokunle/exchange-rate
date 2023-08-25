@@ -5,5 +5,5 @@ use Omotolaawokunle\ExchangeRate\Http\Controllers\ExchangeRateController;
 
 Route::prefix('/api/exchange')->middleware('api')->group(function () {
     Route::post('/', [ExchangeRateController::class, 'getExchangeRate'])->name('exchange-rate.index');
-    Route::view('docs', 'docs');
+    Route::view('docs', 'exchange-rate::docs');
 });
