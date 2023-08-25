@@ -1,0 +1,54 @@
+{
+    "name": "omotolaawokunle/exchange-rate",
+    "description": "A laravel package to get current exchange rates",
+    "keywords": [
+        "omotolaawokunle",
+        "exchange-rate"
+    ],
+    "homepage": "https://github.com/omotolaawokunle/exchange-rate",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Omotola Awokunle",
+            "email": "omotolaawokunle@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/contracts": "^9.28|^10.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.5",
+        "orchestra/testbench": "^7.7|^8.0",
+        "phpunit/phpunit": "^9.5.24"
+    },
+    "autoload": {
+        "psr-4": {
+            "Omotolaawokunle\\ExchangeRate\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Omotolaawokunle\\ExchangeRate\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Omotolaawokunle\\ExchangeRate\\ExchangeRateServiceProvider"
+            ],
+            "aliases": {
+                "ExchangeRate": "Omotolaawokunle\\ExchangeRate\\ExchangeRateFacade"
+            }
+        }
+    }
+}
