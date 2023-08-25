@@ -17,7 +17,8 @@
     ],
     "require": {
         "php": "^8.0",
-        "illuminate/contracts": "^9.28|^10.0"
+        "guzzlehttp/guzzle": "^7.7",
+        "illuminate/support": "^9.28|^10.0"
     },
     "require-dev": {
         "mockery/mockery": "^1.5",
@@ -47,7 +48,7 @@
                 "Omotolaawokunle\\ExchangeRate\\ExchangeRateServiceProvider"
             ],
             "aliases": {
-                "ExchangeRate": "Omotolaawokunle\\ExchangeRate\\ExchangeRateFacade"
+                "ExchangeRate": "Omotolaawokunle\\ExchangeRate\\Facades\\ExchangeRateFacade"
             }
         }
     }

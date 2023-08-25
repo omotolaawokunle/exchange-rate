@@ -2,8 +2,6 @@
 
 namespace Omotolaawokunle\ExchangeRate\Tests;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Response;
 use Illuminate\Support\Facades\Cache;
 use Omotolaawokunle\ExchangeRate\Parser;
 
