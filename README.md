@@ -1,6 +1,3 @@
-Certainly! Here's an example of a README file for your exchange rate package:
-
-```markdown
 # Exchange Rate Laravel Package
 
 The Exchange Rate Laravel Package provides functionalities to work with exchange rates, including fetching rates from an API and performing currency conversions.
