@@ -12,7 +12,10 @@ class ExchangeRateServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->loadRoutesFrom(__DIR__ . '/../routes/api.php');
-
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'exchange-rate');
+        $this->publishes([
+            __DIR__ . '/../public' => public_path('vendor/exchange-rate'),
+        ], 'public');
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__ . '/../config/config.php' => config_path('exchange-rate.php'),
