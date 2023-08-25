@@ -1,26 +1,60 @@
-# Very short description of the package
+Certainly! Here's an example of a README file for your exchange rate package:
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/omotolaawokunle/exchange-rate.svg?style=flat-square)](https://packagist.org/packages/omotolaawokunle/exchange-rate)
-[![Total Downloads](https://img.shields.io/packagist/dt/omotolaawokunle/exchange-rate.svg?style=flat-square)](https://packagist.org/packages/omotolaawokunle/exchange-rate)
-![GitHub Actions](https://github.com/omotolaawokunle/exchange-rate/actions/workflows/main.yml/badge.svg)
+```markdown
+# Exchange Rate Laravel Package
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+The Exchange Rate Laravel Package provides functionalities to work with exchange rates, including fetching rates from an API and performing currency conversions.
 
 ## Installation
 
-You can install the package via composer:
+You can install this package via Composer by running:
 
 ```bash
-composer require omotolaawokunle/exchange-rate
+composer require omotolaawokunle/exchange-rate:dev-main
 ```
+
+## Configuration
+
+After installation, you need to publish the package's configuration file:
+
+```bash
+php artisan vendor:publish --provider "Omotolaawokunle\ExchangeRate\ExchangeRateServiceProvider" --force
+```
+
+This will publish the configuration file to your `config` directory.
 
 ## Usage
 
+### Fetching Exchange Rates
+
+The package provides a `Parser` class to fetch exchange rates. You can use it as follows:
+
 ```php
-// Usage description here
+use Omotolaawokunle\ExchangeRate\Parser;
+
+$parser = new Parser();
+$rates = $parser->getRates();
 ```
 
-### Testing
+### Converting Currency
+
+To perform currency conversion, you can use the `ExchangeRate` class:
+
+```php
+use Omotolaawokunle\ExchangeRate\Facades\ExchangeRate;
+
+$amount = 100;
+$currency = 'USD';
+$result = ExchangeRate::exchange($amount, $currency);
+```
+
+### API Routes
+
+The package also includes an API route for performing currency conversion. You can access it via the `/exchange` endpoint.
+
+## Testing
+
+You can run the package's tests using PHPUnit:
 
 ```bash
 composer test
@@ -46,7 +80,3 @@ If you discover any security related issues, please email omotolaawokunle@gmail.
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-## Laravel Package Boilerplate
-
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).

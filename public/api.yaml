@@ -8,7 +8,7 @@ paths:
   /:
     post:
       operationId: get-exchange-rate
-      summary: Get price in different currency
+      summary: Get price in different currencies
       tags:
         - Exchange Rate
       requestBody:
